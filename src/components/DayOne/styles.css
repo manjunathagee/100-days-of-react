@@ -1,0 +1,41 @@
+.card-contaner {
+    height: 50vh;
+    display: flex;
+    gap: 10px;
+    width: 75vw;
+}
+
+.card-item {
+    border-radius: 2rem;
+    position: relative;
+    flex: .1;
+    transition: flex .5s ease-in;
+}
+
+.card-item.active {
+    flex: 2
+}
+
+.card-item-title {
+    opacity: 0;
+    transition: opacity .5s ease-in;
+}
+
+.card-item.active > .card-item-title{
+    opacity: 1;
+    position: absolute;
+    color: #fff;
+    bottom: 5px;
+    left: 20px;
+}
+
+@media (max-width: 480px) {
+    .card-contaner {
+        width: 100vw;
+    }
+    
+    .card-item:nth-of-type(4),
+    .card-item:nth-of-type(5) {
+        display: none;
+    }
+}
