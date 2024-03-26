@@ -1,9 +1,45 @@
+import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [count, setCount] = useState<number>(0);
+
+  const increment = () => {
+    setCount((c) => c + 1);
+  };
+
   return (
-    <div className="w-[500px] mx-auto m-8 p-4 rounded-lg bg-slate-100/90 flex flex-col gap-2">
-      Hello world
+    <div className="App">
+      <header className="App-header">
+        <p>Hello Vite + React!</p>
+        <p>
+          <button type="button" onClick={increment}>
+            count is: {count}
+          </button>
+        </p>
+        <p>
+          Edit <code>App.tsx</code> and save to test HMR updates.
+        </p>
+        <p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+          {" | "}
+          <a
+            className="App-link"
+            href="https://vitejs.dev/guide/features.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Vite Docs
+          </a>
+        </p>
+      </header>
     </div>
   );
 }
